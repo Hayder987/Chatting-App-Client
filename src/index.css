@@ -3,7 +3,7 @@
 @plugin "daisyui";
 
 body{
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg-banner.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11,5 +11,5 @@ body{
 }
 
 .opacity{
- background-color: rgba(250, 252, 252, 0.507);
+ background-color: rgba(250, 252, 252, 0.034);
 }
