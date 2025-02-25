@@ -1,6 +1,19 @@
+import { Link } from "react-router";
 import GenderBox from "./GenderBox";
+import { useState } from "react";
 
 const SignUp = () => {
+
+  const [inputs, setInputs] = useState({
+    fullName: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+    gender: ''
+  })
+
+  
+
   return (
     <div className="min-w-[450px] flex justify-center items-center mx-auto flex-col">
       <div
@@ -67,11 +80,11 @@ const SignUp = () => {
           <button className="text-center mb-3  cursor-pointer mt-6 w-full rounded-md bg-gray-900 py-2 px-4 text-white">
             Sign Up
           </button>
-          <a href="#" className="">
+          <Link to='/login' className="">
             <span className="text-center text-gray-300 hover:text-blue-500">
                Have An Account? Login
             </span>
-          </a>
+          </Link>
         </form>
       </div>
     </div>
