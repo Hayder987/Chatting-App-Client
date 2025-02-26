@@ -13,7 +13,13 @@ const useSignUp = ()=>{
     try{
       
       const {data} =await axios.post(`/api/auth/signup`, {fullName, username, password, confirmPassword, gender})
-      console.log(data)
+       if(data.error){
+        throw new Error(data.error)
+       }
+      
+       //local storage
+      // context   
+
     }
     catch(err){
         toast.error(err.message)
