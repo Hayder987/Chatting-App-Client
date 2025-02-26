@@ -8,7 +8,7 @@ import useAuthContext from './hooks/useAuthContext';
 
 function App() {
   const { authUser } = useAuthContext(); 
-
+  console.log(authUser)
   return (
     <div className='h-screen p-4 flex justify-center items-center'>
       <Routes>

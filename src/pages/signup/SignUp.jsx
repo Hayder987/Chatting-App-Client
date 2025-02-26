@@ -98,8 +98,10 @@ const SignUp = () => {
              selectedGender={inputs.gender}
              ></GenderBox>
           </div>
-          <button type="submit" className="text-center mb-3  cursor-pointer mt-6 w-full rounded-md bg-gray-900 py-2 px-4 text-white">
-            Sign Up
+          <button
+           disabled={loading}
+           type="submit" className="text-center mb-3  cursor-pointer mt-6 w-full rounded-md bg-gray-900 py-2 px-4 text-white">
+            {loading? <span className="loading loading-spinner"></span>: "Sign Up"}
           </button>
           <Link to='/login' className="">
             <span className="text-center text-gray-300 hover:text-blue-500">
