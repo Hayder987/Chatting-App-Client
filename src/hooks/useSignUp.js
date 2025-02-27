@@ -9,9 +9,10 @@ const useSignUp = ()=>{
 
  const signup = async ({fullName, username, password, confirmPassword, gender})=>{
     const success = handleInputErrors({fullName, username, password, confirmPassword, gender})
-   
     if(!success) return
+
     setLoading(true)
+    
     try{
       
       const {data} =await axios.post(`/api/auth/signup`, {fullName, username, password, confirmPassword, gender})

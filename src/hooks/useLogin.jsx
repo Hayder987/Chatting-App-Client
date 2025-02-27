@@ -9,6 +9,9 @@ const useLogin = () => {
  const {setAuthUser } = useAuthContext();
 
  const login = async (username, password)=>{
+    const success = handleInputErrors({ username, password})
+    if(!success) return
+
     setLoading(true);
     try{
       const {data} = await axios.post(`/api/auth/login`, {username, password})
@@ -33,4 +36,14 @@ const useLogin = () => {
 
 }
 
-export default useLogin
+export default useLogin;
+
+
+function handleInputErrors({ username, password }){
+    if( !username || !password ){
+        toast.error('Please Fill All Field')
+        return false
+    }
+    
+    return true
+}

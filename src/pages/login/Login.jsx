@@ -53,7 +53,11 @@ const Login = () => {
               />
             </div>
           </div>
-           <button className="text-center mb-3  cursor-pointer mt-6 w-full rounded-md bg-gray-900 py-2 px-4 text-white">Login</button>
+           <button
+           disabled={loading}
+            className="text-center mb-3  cursor-pointer mt-6 w-full rounded-md bg-gray-900 py-2 px-4 text-white">
+           {loading? <span className="loading loading-spinner"></span>: "Login"}
+            </button>
            <Link to='/signup' className=""><span className="text-center text-gray-300 hover:text-blue-500">{"Don't"} Have An Account? SignUp</span></Link>
         </form>
       </div>
