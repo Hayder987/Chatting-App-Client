@@ -28,8 +28,8 @@ const Message = ({message}) => {
 
            </div>
         </div>
-        <div className={`chat-bubble text-gray-300 ${bubbleBgColor}`}>{message?.message}</div>
-        <div className="chat-footer text-xs text-gray-400 flex gap-1 items-center">{formattedTime}</div>
+        <div className={`chat-bubble max-w-[300px] text-gray-300 ${bubbleBgColor}`}>{message?.message}</div>
+        <div className="chat-footer text-xs text-gray-300 flex gap-1 items-center">{formattedTime}</div>
     </div>
   )
 }
