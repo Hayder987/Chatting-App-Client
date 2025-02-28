@@ -11,9 +11,9 @@ const useGetMessages = () => {
   useEffect(()=>{
    const getMessages = async ()=>{
     setLoading(true)
+    
     try{
-      const {data} = axios.get(`/api/messages/${selectedConversation._id}`)
-
+      const {data} = await axios.get(`/api/messages/${selectedConversation?._id}`)
       if(data.error) {
         throw new Error(data.error)
       }

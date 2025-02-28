@@ -1,20 +1,33 @@
+import useAuthContext from "../hooks/useAuthContext"
+import useConversation from "../zustand/useConversation";
 
 
-const Message = () => {
+const Message = ({message}) => {
+
+  const {authUser} = useAuthContext();
+  const {selectedConversation} = useConversation();
+  const fromMe = message.senderId === authUser._id;
+  const chatClassName = fromMe ? 'chat-end' : 'chat-start';
+  const profilePic = fromMe ? authUser?.profilePic : selectedConversation?.profilePic;
+  const bubbleBgColor = fromMe ? 'bg-blue-500' : 'bg-gray-800';
+
+
+
+
   return (
-    <div className="chat chat-end">
+    <div className={`chat ${chatClassName}`}>
         <div className="chat-image avatar">
            <div className="w-10 rounded-full">
             <img 
-            src="https://i.ibb.co.com/yQVc3zX/280112897-1476710909415001-2943046122797346934-n.jpg" 
+            src={profilePic} 
             alt="Chat user Image" 
             className="" 
             />
 
            </div>
         </div>
-        <div className="chat-bubble text-gray-300 bg-blue-500">Hi! Orin</div>
-        <div className="chat-footer text-xs text-gray-400 flex gap-1 items-center">12:10</div>
+        <div className={`chat-bubble text-gray-300 ${bubbleBgColor}`}>{message?.message}</div>
+        <div className="chat-footer text-xs text-gray-400 flex gap-1 items-center">{message?.createdAt}</div>
     </div>
   )
 }
