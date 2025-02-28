@@ -14,8 +14,7 @@ const useSendMessage = () => {
      const {data} = await axios.post(`/api/messages/send/${selectedConversation._id}`, {message})
      if(data.error){
       throw new Error(data.error)
-     }
-
+     }  
      setMessages([...messages, data])
 
     }
