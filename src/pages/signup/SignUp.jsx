@@ -59,7 +59,7 @@ const SignUp = () => {
                 type="text"
                 placeholder="jhondoe"
                 value={inputs.username}
-                onChange={(e)=> setInputs({...inputs, username: e.target.value})}
+                onChange={(e)=> setInputs({...inputs, username: e.target.value.toLowerCase()})}
                 className="input w-full bg-gray-900 border-none text-white input-bordered"
                 required
               />
