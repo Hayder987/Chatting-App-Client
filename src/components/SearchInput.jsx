@@ -37,7 +37,7 @@ const SearchInput = () => {
           placeholder="Search"
           value={search}
           onChange={(e)=> setSearch(e.target.value)}
-          className="input w-full bg-gray-900  border-none text-white rounded-full"
+          className="input w-full bg-gray-800  border-none text-white rounded-full"
           required
         />
         <button className="p-3 bg-blue-800 cursor-pointer text-white rounded-full">

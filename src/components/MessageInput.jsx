@@ -26,7 +26,7 @@ const MessageInput = () => {
             placeholder="Send a message"
             value={message}
             onChange={(e)=> setMessage(e.target.value)}
-            className="input w-full bg-gray-900 border-none text-white input-bordered"
+            className="input w-full bg-gray-800 border-none text-white input-bordered"
             required
           />
           <button
